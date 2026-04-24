@@ -1,6 +1,7 @@
 # Fully working [Manim setup ⮺](https://docs.manim.community/en/stable/installation/uv.html)
 
-Not that ManimCE is CPU based, and that's what is configured here.
+**Note** that ManimCE is CPU based, and that's what is configured here,
+Binding with system GPU is provided but not usefull here
 
 - [nix](https://yduf.github.io/package-nix/) provides standard tools python + uv
 - [uv](https://docs.astral.sh/uv/) manage python packages 
@@ -17,7 +18,6 @@ Not that ManimCE is CPU based, and that's what is configured here.
 
 As a prerequesite, you need to have
 - [nix](https://yduf.github.io/package-nix/) package manager installed. 
-- a working OpenGl setup on your system
 
 ```bash
 # This is the regular call to have a working environment
@@ -29,8 +29,6 @@ uv sync
 
 # then (optionally) check (and generate a sample video)
 uv run manim checkhealth
-
-nixglhost python -c "import torch; print(torch.cuda.is_available()); print(torch.cuda.get_device_name(0))"
 
 # and you are done
 ```
